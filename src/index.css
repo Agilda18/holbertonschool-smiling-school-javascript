@@ -15,8 +15,10 @@ body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: #0f172a;
-  background: #ffffff;
+  background: linear-gradient(160deg, #0b1630 0%, #071126 55%, #13274e 100%);
+  min-height: 100vh;
 }
+#root { min-height: 100vh; }
 
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
