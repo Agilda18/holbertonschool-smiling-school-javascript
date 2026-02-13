@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Card, Col, Container, Form, Row } from "react-bootstrap";
+import { Alert, Card, Col, Container, Form, Row } from "react-bootstrap";
 import "../pages/CoursesPage.css";
 
 function Courses() {
   const [courses, setCourses] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedTopic, setSelectedTopic] = useState("all");
 
 
   useEffect(() => {
@@ -26,9 +27,18 @@ function Courses() {
     setSearchTerm(value);
   };
 
-  const filteredCourses = courses.filter((course) => {
-    const title = (course.title .toLowerCase());
-    return title.includes(searchTerm.toLowerCase());
+  const handleTopicChange = (event) => {
+    const value = event.target.value.trim().toLowerCase();
+    setSelectedTopic(value);
+  };
+
+  const searchedCourses = courses.filter((course) => {
+    const title = (course.title || "").toLowerCase();
+    const topic = (course.topic || "").toLowerCase();
+    const matchesSearch = title.includes(searchTerm.toLowerCase());
+    const matchesTopic = selectedTopic === "all" || topic === selectedTopic;
+
+    return matchesSearch && matchesTopic;
   });
 
   return (
@@ -58,11 +68,11 @@ function Courses() {
               </Col>
               <Col xs={12} md={4}>
                 <Form.Label className="filter-label">TOPIC</Form.Label>
-                <Form.Select>
-                  <option value="All">All</option>
-                  <option value="Novice">Novice</option>
-                  <option value="Intermediate">Intermediate</option>
-                  <option value="Expert">Expert</option>
+                <Form.Select value={selectedTopic} onChange={handleTopicChange}>
+                  <option value="all">All</option>
+                  <option value="novice">Novice</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="expert">Expert</option>
                 </Form.Select>
               </Col>
               <Col xs={12} md={4}>
@@ -79,9 +89,9 @@ function Courses() {
       </section>
 
       <Container className="courses-content">
-        <p className="courses-count">{filteredCourses.length} courses loaded</p>
+        <p className="courses-count">{searchedCourses.length} courses loaded</p>
         <Row className="g-4">
-          {filteredCourses.map((course, index) => (
+          {searchedCourses.map((course, index) => (
             <Col key={course.id ?? index} xs={12} sm={6} lg={3}>
               <Card className="course-card">
                 <Card.Img
@@ -98,6 +108,29 @@ function Courses() {
             </Col>
           ))}
         </Row>
+        {/* <Row>
+          {
+            searchedCourses.length > 0
+              ? searchedCourses.map((course, index) => {
+                return (
+                  <Col md={3} key={index}>
+                    <Card>
+                      <Card.Img variant="top" src={course.author_pic_url} />
+                      <Card.Body>
+                        <Card.Title>{course.author}</Card.Title>
+                        <Card.Text>{course.title}</Card.Text>
+                        {Array.from({ length: course.star || 0 }).map((_, index) => (
+                          <span key={index}>★</span>
+                        ))}
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                );
+              })
+              : <Alert variant="danger">No Data</Alert>
+
+          }
+        </Row> */}
       </Container>
     </main>
   );
