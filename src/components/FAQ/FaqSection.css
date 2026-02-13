@@ -1,0 +1,39 @@
+.faq-section {
+  background: #ffffff;
+  color: #071629;
+  padding: 72px 0 84px;
+}
+
+.faq-section h1 {
+  text-align: center;
+  font-size: 54px;
+  font-weight: 300;
+  margin-bottom: 44px;
+}
+
+.faq-grid {
+  --bs-gutter-x: 7rem;
+}
+
+.faq-section h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.faq-section p {
+  margin: 0;
+  color: #5e5e67;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+@media (max-width: 768px) {
+  .faq-section h1 {
+    font-size: 40px;
+  }
+
+  .faq-grid {
+    --bs-gutter-x: 1.5rem;
+  }
+}

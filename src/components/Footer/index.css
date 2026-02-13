@@ -1,0 +1,12 @@
+.footer-section {
+  width: 100%;
+  background-color: #071629 !important;
+}
+
+.footer-section a img {
+  display: block;
+}
+
+.footer-copy {
+  color: #ffffff !important;
+}

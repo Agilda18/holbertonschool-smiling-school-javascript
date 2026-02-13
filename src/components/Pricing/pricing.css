@@ -1,0 +1,44 @@
+.pricing-component {
+  color: #ffffff;
+  background: linear-gradient(rgba(7, 22, 41, 0.75), rgba(7, 22, 41, 0.85)),
+    url("../../assets/pic_2.jpg") center/cover no-repeat;
+  border-radius: 10px;
+}
+
+.text-main {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.btn-purple {
+  background-color: #c271ff !important;
+  border: none !important;
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  padding: 8px 20px !important;
+}
+
+.txt-month {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+
+.pricing-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 16px 0;
+  align-items: center;
+}
+
+.pricing-row:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.check-icon {
+  color: #9adf66;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.signal-row {
+  min-height: 70px;
+}

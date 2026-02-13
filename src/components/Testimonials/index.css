@@ -1,0 +1,34 @@
+.bg-color {
+    background-color: #C271FF;
+}
+
+.testimonial-section {
+    padding: 86px 0;
+}
+
+.testimonial-container {
+    max-width: 980px;
+}
+
+.testimonial-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.testimonial-arrow {
+    opacity: 0.45;
+    text-decoration: none;
+}
+
+.testimonial-arrow:hover {
+    opacity: 0.9;
+}
+
+.testimonial-arrow.left {
+    left: 0;
+}
+
+.testimonial-arrow.right {
+    right: 0;
+}

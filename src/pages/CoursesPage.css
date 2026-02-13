@@ -1,0 +1,55 @@
+.courses-page {
+  max-width: 1120px;
+}
+
+.form-container {
+  background: #c271ff;
+  padding: 14px;
+  border-radius: 6px;
+}
+
+.form-container .form-control,
+.form-container .form-select {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+
+.form-container .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.form-container .form-select option {
+  color: #111;
+}
+
+.course-card {
+  height: 100%;
+  border: 1px solid #ececec;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.thumb-wrap {
+  position: relative;
+}
+
+.course-image {
+  height: 145px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 46px;
+  height: 46px;
+}
+
+.course-meta {
+  color: #c271ff;
+  font-weight: 600;
+}

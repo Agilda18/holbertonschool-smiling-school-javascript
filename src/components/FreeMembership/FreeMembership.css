@@ -1,0 +1,34 @@
+.membership {
+    background-color: #071629;
+    color: white;
+}
+.text-color{
+    font-size: 32px;
+}
+.text-color span{
+    color: #C271FF;
+}
+.text-h2{
+    font-size: 18px;
+}
+.text-p{
+    font-size: 14px;
+    margin-top: 15px;
+    line-height: 2;
+}
+.membership-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.membership-icon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bt-edit{
+    background-color: #C271FF !important;
+    border-radius: 22px !important;
+    border: none !important;
+}
